@@ -1,0 +1,58 @@
+/* Layout.css */
+
+/* Apply a reset to ensure consistent styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5; /* Light gray background */
+  }
+  
+  /* Wrapper styles */
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header styles */
+  .header {
+    background-color: #1890ff; /* Primary color for header */
+    color: #fff; /* Text color */
+    padding: 12px 24px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  /* Content styles */
+  .content {
+    flex: 1;
+    padding: 20px; /* Add padding to content area */
+  }
+  
+  /* Footer styles */
+  .footer {
+    background-color: #001529; /* Dark background for footer */
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: auto; /* Push footer to the bottom */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 20px;
+    }
+  }
+  
