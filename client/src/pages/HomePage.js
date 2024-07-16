@@ -76,7 +76,7 @@ const HomePage = () => {
       try {
         const user = JSON.parse(localStorage.getItem("user"));
         setLoading(true);
-        const res = await axios.post("/transections/get-transection", {
+        const res = await axios.post("/api/v1/transections/get-transection", {
           userid: user._id,
           frequency,
           selectedDate,
@@ -95,11 +95,14 @@ const HomePage = () => {
   const handleDelete = async (record) => {
     try {
       setLoading(true);
-      await axios.post("/api/v1/transections/delete-transection", {
+      const res=await axios.post("/api/v1/transections/delete-transection", {
         transacationId: record._id,
       });
       setLoading(false);
       message.success("Transaction Deleted!");
+      console.log(res);
+      console.log(res.data)
+      window.location.reload();
     } catch (error) {
       setLoading(false);
       console.log(error);
@@ -113,7 +116,7 @@ const HomePage = () => {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
       if (editable) {
-        await axios.post("/api/v1/transections/edit-transection", {
+        const res=await axios.post("/api/v1/transections/edit-transection", {
           payload: {
             ...values,
             userId: user._id,
@@ -122,13 +125,18 @@ const HomePage = () => {
         });
         setLoading(false);
         message.success("Transaction Updated Successfully");
+        console.log(res);
+        console.log(res.data)
+        window.location.reload();
       } else {
         await axios.post("/api/v1/transections/add-transection", {
           ...values,
           userid: user._id,
         });
+  
         setLoading(false);
         message.success("Transaction Added Successfully");
+        window.location.reload();
       }
       setShowModal(false);
       setEditable(null);
