@@ -3,12 +3,6 @@ const { addTransection,getAllTransection,editTransection,deleteTransection } = r
 
 //router object,
 const router=express.Router();
-
-
-//routers
-
-
-//add Transection
 router.post('/add-transection',addTransection)
 router.post('/edit-transection',editTransection)
 router.post('/delete-transection',deleteTransection)

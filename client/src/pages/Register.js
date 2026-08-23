@@ -21,6 +21,7 @@ const Register = () => {
     } catch (error) {
       setLoading(false);
       message.error("Something went wrong");
+      console.log(error)
     }
   };
 
